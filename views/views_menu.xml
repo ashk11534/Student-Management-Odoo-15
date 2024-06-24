@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <menuitem id="student_management_root_menu_id" name="Student Management" sequence="50">
+
+        <menuitem id="student_menu_id"
+                  name="Students"
+                  action="student_action_id"
+                  sequence="0"
+        />
+
+    </menuitem>
+
+</odoo>
