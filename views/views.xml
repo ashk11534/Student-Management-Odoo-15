@@ -1,77 +1,114 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
 <odoo>
-
+    <!-- Tree, form, search view and action for stm.student model (start)-->
     <record id="student_tree_view_id" model="ir.ui.view">
-
         <field name="name">Student Tree View</field>
-
         <field name="model">stm.student</field>
-
         <field name="arch" type="xml">
-
             <tree>
-
                 <field name="name"/>
-
                 <field name="age"/>
-
+                <field name="enrolled_class"/>
+                <field name="roll"/>
             </tree>
-
         </field>
-
     </record>
 
     <record id="student_form_view_id" model="ir.ui.view">
-
         <field name="name">Student Form View</field>
-
         <field name="model">stm.student</field>
-
         <field name="arch" type="xml">
-
             <form>
-
                 <sheet>
-
                     <group>
-
                         <group>
-
                             <field name="name"/>
-
                             <field name="age"/>
-
+                            <field name="enrolled_class"/>
+                            <field name="roll"/>
                         </group>
-
                     </group>
-
                 </sheet>
-
             </form>
-
         </field>
+    </record>
 
+    <record id="student_search_view_id" model="ir.ui.view">
+        <field name="name">Student Search View</field>
+        <field name="model">stm.student</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"
+                       filter_domain="['|', '|', '|', ('name', 'ilike', self), ('age', 'ilike', self), ('enrolled_class', 'ilike', self), ('roll', 'ilike', self)]"/>
+                <field name="age"/>
+                <field name="enrolled_class"/>
+                <field name="roll"/>
+            </search>
+        </field>
     </record>
 
     <record id="student_action_id" model="ir.actions.act_window">
-
-        <field name="name">Student Action</field>
-
+        <field name="name">Students</field>
         <field name="res_model">stm.student</field>
-
         <field name="view_mode">tree,form</field>
-
         <field name="help" type="html">
-
             <p class="o_view_nocontent_smiling_face">
-
-                Add a new student
-
+                Add a new student!
             </p>
-
         </field>
+    </record>
+    <!-- Tree, form, search view and action for stm.student model (end)-->
 
+    <!-- Tree, form, search view and action for stm.subject model (start)-->
+    <record id="subject_tree_view_id" model="ir.ui.view">
+        <field name="name">Subject Tree View</field>
+        <field name="model">stm.subject</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
     </record>
 
+    <record id="subject_form_view_id" model="ir.ui.view">
+        <field name="name">Subject Form View</field>
+        <field name="model">stm.subject</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="subject_search_view" model="ir.ui.view">
+        <field name="name">Subject Search View</field>
+        <field name="model">stm.subject</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="['|', ('name', 'ilike', self), ('code', 'ilike', self)]"/>
+                <field name="code"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="subject_action_id" model="ir.actions.act_window">
+        <field name="name">Subjects</field>
+        <field name="res_model">stm.subject</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new subject!
+            </p>
+        </field>
+    </record>
+    <!-- Tree, form, search view and action for stm.subject model (end)-->
 </odoo>
