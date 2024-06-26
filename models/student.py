@@ -19,3 +19,9 @@ class Student(models.Model):
         ('10', '10'),
     ], string='Class')
     roll = fields.Char(string='Roll')
+    gender = fields.Selection([
+        ('male', 'Male'),
+        ('female', 'Female')
+    ], string='Gender')
+
+    image = fields.Image(string='Image')
