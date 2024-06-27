@@ -14,6 +14,10 @@
     'demo': [],
     'installable': True,
     'auto_install': False,
-    'assets': {},
+    'assets': {
+        'web.assets_backend': [
+            'student_management/static/src/css/styles.css',
+        ],
+    },
     'license': 'LGPL-3',
 }

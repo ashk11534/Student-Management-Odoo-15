@@ -25,3 +25,4 @@ class Student(models.Model):
     ], string='Gender')
 
     image = fields.Image(string='Image')
+    active = fields.Boolean(string='Active', default=True)

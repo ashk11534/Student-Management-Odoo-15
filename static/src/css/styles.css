@@ -1,0 +1,15 @@
+.oe_archived_flag {
+    position: absolute;
+    top: 65px;
+    right: -5px;
+    z-index: 10;
+    transform: rotate(45deg);
+    transform-origin: right top;
+    width: 100px;
+    text-align: center;
+    background-color: #d9534f;
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
